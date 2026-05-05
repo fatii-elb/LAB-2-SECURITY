@@ -380,8 +380,7 @@ Non applicable (seul AVD utilise dans ce test)
 6. screenshot_6_adb_commands.png
  <img width="1252" height="284" alt="image" src="https://github.com/user-attachments/assets/35c9125d-5344-4855-b54d-31eba6c4d3c8" />
 ommandes ADB (root
-
-11. screenshot_7_verified_boot.png - Verified Boot commands
+7. screenshot_7_verified_boot.png - Verified Boot commands
 
 <img width="1276" height="423" alt="image" src="https://github.com/user-attachments/assets/9c6f641a-d4f3-4ba9-922b-861ffc33dca9" />
 
