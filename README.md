@@ -358,40 +358,32 @@ Non applicable (seul AVD utilise dans ce test)
 ### Captures d'ecran references
 
 1. screenshot_1_device_manager.png - Device Manager avec Pixel 6
+<img width="1520" height="212" alt="image" src="https://github.com/user-attachments/assets/805a44e8-ccc4-4dbc-b7c8-99a78079b673" />
+<img width="1536" height="486" alt="image" src="https://github.com/user-attachments/assets/598235d2-1d4c-4a7d-8f28-4663e9eb9ca3" />
+<img width="1591" height="376" alt="image" src="https://github.com/user-attachments/assets/e49b9fb6-75e7-4a44-af0d-824351406342" />
+<img width="1575" height="266" alt="image" src="https://github.com/user-attachments/assets/087cf509-6b7d-40ae-b813-ced46444f1ca" />
+<img width="1646" height="299" alt="image" src="https://github.com/user-attachments/assets/e7bee3ce-4860-4cc8-b1e8-421d7bea793f" />
 2. screenshot_2_uncrackable_home.png - Ecran d'accueil UnCrackable1
+   <img width="687" height="1195" alt="image" src="https://github.com/user-attachments/assets/470e5ea7-fdc2-447e-80c4-67d69927edf0" />
 3. screenshot_3_scenario2_verify.png - Popup verification
+<img width="635" height="1204" alt="image" src="https://github.com/user-attachments/assets/61d29b42-bb9d-4452-916e-3bf711e3cb80" />
+
 4. screenshot_4_scenario2_gif.png - Galerie GIF
+
+  <img width="542" height="1070" alt="image" src="https://github.com/user-attachments/assets/58909d4c-6708-41fd-bea7-ca63eab146e4" />
+
 5. screenshot_5_scenario3_settings.png - Parametres clavier
-6. screenshot_6_adb_commands.png - Commandes ADB (root)
-7. screenshot_7_verified_boot.png - Verified Boot commands
 
----
+  <img width="614" height="1256" alt="image" src="https://github.com/user-attachments/assets/8c590c38-0846-4fa1-8f5c-9df23e16b0c7" />
 
-## ETAPE 20: CHECKLIST FINALE
 
-### Avant le test
+6. screenshot_6_adb_commands.png
+ <img width="1252" height="284" alt="image" src="https://github.com/user-attachments/assets/35c9125d-5344-4855-b54d-31eba6c4d3c8" />
+ommandes ADB (root
 
-[X] Perimetre ecrit
-[X] AVD neuf et propre
-[X] App de test installee
-[X] 3 scenarios documentes
-[X] Versions notees (API 34, v1.0)
+11. screenshot_7_verified_boot.png - Verified Boot commands
 
-### Pendant le test
-
-[X] Root confirme
-[X] Verified Boot verifie
-[X] 3 scenarios executes
-[X] Screenshots pris
-[X] Observations notees
-
-### Apres le test
-
-[X] Donnees supprimees
-[X] Reset prepare
-[X] Preuve prête
-[X] Rapport sauvegarde
-[X] Aucun compte personnel
+<img width="1276" height="423" alt="image" src="https://github.com/user-attachments/assets/9c6f641a-d4f3-4ba9-922b-861ffc33dca9" />
 
 ---
 
