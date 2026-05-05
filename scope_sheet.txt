@@ -1,0 +1,5 @@
+App de Test: TestApp v1.0
+Support: AVD Pixel_6 API 34 (Émulateur)
+Objectif: Comprendre l'impact du rooting et des contrôles d'intégrité Android
+Données: Fictives uniquement
+Réseau: Test isolé

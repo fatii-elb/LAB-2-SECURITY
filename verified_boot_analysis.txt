@@ -1,0 +1,70 @@
+=== ÉTAPE 7: VERIFIED BOOT ===
+
+OBJECTIF PRINCIPAL DE VERIFIED BOOT:
+Garantir que le système qui démarre est celui prévu par le fabricant, sans modifications malveillantes.
+Verified Boot vérifie l'intégrité de la chaîne de démarrage complète: bootloader → kernel → system partition.
+
+DÉFINITION COURTE DE "CHAIN OF TRUST":
+La "chain of trust" est une série de vérifications cryptographiques où chaque composant vérifie l'authenticité du composant suivant avant de lui faire confiance et de lui passer le contrôle.
+C'est comme une chaîne de gardiens où chacun vérifie l'identité du suivant avant de le laisser passer à l'étape suivante du démarrage.
+
+POURQUOI L'INTÉGRITÉ AU DÉMARRAGE EST CRITIQUE:
+Si le processus de démarrage est compromis (bootloader ou kernel modifiés), toutes les protections ultérieures (SELinux, permissions, sandboxing) peuvent être contournées.
+C'est comme une forteresse dont la porte principale serait ouverte: la sécurité intérieure devient inutile.
+
+---
+
+VÉRIFICATION SUR L'AVD PIXEL_6 API 34:
+
+Commandes exécutées:
+1. adb shell getprop ro.boot.verifiedbootstate
+2. adb shell getprop ro.boot.veritymode
+3. adb shell getprop ro.boot.vbmeta.device_state
+
+Résultats observés:
+- ro.boot.verifiedbootstate: (non défini/vide)
+- ro.boot.veritymode: enforcing
+- ro.boot.vbmeta.device_state: (non défini/vide)
+
+---
+
+INTERPRÉTATION DES COULEURS VERIFIED BOOT:
+
+GREEN: Tout est normal, système vérifié et intègre.
+- Bootloader et system partition signés correctement
+- Aucune modification détectée
+- Démarrage sécurisé confirmé
+
+YELLOW/ORANGE: Avertissement, système modifié mais fonctionnel.
+- Bootloader déverrouillé ou system partition modifiée
+- Mode debug ou développement activé
+- Intégrité compromise mais démarrage autorisé
+
+RED: Danger critique, intégrité compromise.
+- Modification malveillante détectée
+- Signature invalide ou corrompue
+- Démarrage refusé ou échoué
+
+---
+
+INTERPRÉTATION POUR NOTRE AVD:
+
+État actuel: veritymode = enforcing (mode strict)
+
+Signification: 
+- dm-verity est ACTIF et en mode "enforcing" (stricte)
+- Les fichiers système sont vérifiés à chaque accès
+- Toute modification détectée bloquerait le système
+
+Conclusion:
+- L'AVD a Verified Boot et dm-verity activés
+- L'intégrité du système est théoriquement protégée
+- Cependant, l'app UnCrackable ne détecte pas le rooting, ce qui signifie que la sécurité au niveau application est faible
+- Le rooting (uid=0) existe malgré ces protections, indiquant que les contrôles d'intégrité n'empêchent pas totalement l'escalade de privilèges sur cet AVD de développement
+
+OBSERVATION CRITIQUE:
+Sur cet AVD de développement, malgré la présence de Verified Boot et dm-verity en mode enforcing:
+1. Le rooting est possible (uid=0 confirmé)
+2. L'app ne détecte pas le rooting
+3. Aucune restriction de sécurité n'est appliquée aux applications
+Cela démontre que les protections au niveau système (Verified Boot) ne suffisent pas sans contrôles applicatifs (rooting detection).
